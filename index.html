@@ -7,23 +7,23 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
 
     <style>
         /* ==========================================================================
-           1. BRAND VARIABLES & BLUEPRINT MICRO-GRID SYSTEM
+           1. CORE COGNITIVE PALETTE & DEPTH SYSTEM
            ========================================================================== */
         :root {
-            --bg-main: #0A0E17;        /* Deep Space Navy */
-            --bg-card: #111827;        /* Matte Slate Charcoal */
-            --accent-cyan: #00F0FF;    /* Electric Cyan - AI Logic */
-            --accent-coral: #F17A63;   /* Sunset Coral - Design Focus */
-            --accent-purple: #8B5CF6;  /* High-Tech Vector Path */
+            --bg-main: #060913;        /* Midnight Velvet Blue */
+            --bg-card: rgba(15, 23, 42, 0.45); /* Translucent Slate Glass */
+            --accent-cyan: #00F0FF;    /* Electric Logic Light */
+            --accent-coral: #F17A63;   /* Sunset Aesthetic Core */
+            --accent-purple: #7C3AED;  /* Deep Telemetry Indigo */
             --text-pure: #F9FAFB;
             --text-muted: #9CA3AF;
-            --border-glow: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(255, 255, 255, 0.04);
             
-            --ff-heading: 'Montserrat', sans-serif;
+            --ff-heading: 'Plus Jakarta Sans', sans-serif;
             --ff-body: 'Inter', sans-serif;
         }
 
@@ -41,68 +41,69 @@
             font-family: var(--ff-body);
         }
 
+        /* Ambient background glow vectors generated via native layout curves */
         body {
             overflow-x: hidden;
             line-height: 1.6;
             background-color: var(--bg-main);
-            /* Shiftwave Signature Blueprint Grid Mapping */
             background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-            background-size: 45px 45px;
-            background-position: center;
+                radial-gradient(circle at 10% 15%, rgba(0, 240, 255, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(241, 122, 99, 0.04) 0%, transparent 45%);
+            background-attachment: fixed;
         }
 
         /* ==========================================================================
-           2. REUSABLE UI FRAMES & ACTION COMPONENTS
+           2. PREMIUM INTERACTIVE BUTTONS & EMBEDS
            ========================================================================== */
         .btn {
             display: inline-block;
-            padding: 0.85rem 2rem;
+            padding: 0.95rem 2.25rem;
             font-family: var(--ff-body);
             font-weight: 600;
             font-size: 0.95rem;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 100px; /* Trendy pill shapes */
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             text-align: center;
         }
 
         .btn-outline-cyan {
-            background: transparent;
+            background: rgba(0, 240, 255, 0.02);
             color: var(--text-pure);
-            border: 1px solid var(--accent-cyan);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            backdrop-filter: blur(4px);
         }
 
         .btn-outline-cyan:hover {
-            background-color: rgba(0, 240, 255, 0.04);
-            box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
+            border-color: var(--accent-cyan);
+            background: rgba(0, 240, 255, 0.08);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.25);
+            transform: translateY(-2px);
         }
 
         .btn-solid-coral {
-            background: var(--accent-coral);
-            color: #0A0E17;
-            border: 1px solid var(--accent-coral);
+            background: linear-gradient(135deg, var(--accent-coral), #e06952);
+            color: #060913;
+            border: none;
+            box-shadow: 0 4px 20px rgba(241, 122, 99, 0.2);
         }
 
         .btn-solid-coral:hover {
-            background: #e06952;
-            border-color: #e06952;
-            box-shadow: 0 0 25px rgba(241, 122, 99, 0.3);
+            box-shadow: 0 8px 30px rgba(241, 122, 99, 0.4);
+            transform: translateY(-2px);
         }
 
         .btn-submit {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-coral));
-            color: #0A0E17;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-coral));
+            color: #060913;
             font-weight: 700;
             border: none;
             width: 100%;
-            border-radius: 6px;
         }
 
         .btn-submit:hover {
-            box-shadow: 0 5px 25px rgba(0, 240, 255, 0.3);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
         }
 
         .accent-cyan-text { color: var(--accent-cyan); }
@@ -110,7 +111,6 @@
 
         .gradient-text {
             background: linear-gradient(135deg, var(--accent-cyan), var(--accent-coral));
-            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -118,51 +118,53 @@
         .section-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 8rem 2rem;
+            padding: 9rem 2rem;
         }
 
         .section-header {
-            text-align: left;
-            margin-bottom: 5rem;
-            max-width: 800px;
-            border-left: 2px solid var(--accent-cyan);
-            padding-left: 1.5rem;
+            text-align: center;
+            margin-bottom: 6rem;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .section-title {
             font-family: var(--ff-heading);
-            font-size: 3rem;
+            font-size: 3.25rem;
             font-weight: 800;
             letter-spacing: -0.04em;
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             line-height: 1.15;
         }
 
         .section-tagline {
             color: var(--text-muted);
-            font-size: 1.15rem;
+            font-size: 1.2rem;
+            opacity: 0.85;
         }
 
         /* ==========================================================================
-           3. STICKY FRAMED GLASS NAVBAR 
+           3. FLUENT FLOATING GLASSMORPHISM NAVBAR Layer
            ========================================================================== */
         .navbar {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 4rem);
+            max-width: 1200px;
             z-index: 1000;
-            background: rgba(10, 14, 23, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-glow);
+            background: rgba(6, 9, 19, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--border-glow);
+            border-radius: 100px;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.2rem 2rem;
+            padding: 0.75rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -175,15 +177,15 @@
         }
 
         .logo-svg {
-            width: 36px;
-            height: 36px;
+            width: 34px;
+            height: 34px;
             margin-right: 12px;
         }
 
         .logo-text {
             font-family: var(--ff-heading);
             font-weight: 800;
-            font-size: 1.5rem;
+            font-size: 1.45rem;
             color: #F9FAFB;
             letter-spacing: -0.03em;
         }
@@ -191,7 +193,7 @@
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            margin-right: 3rem;
+            margin: 0 1.5rem;
             font-size: 0.95rem;
             font-weight: 500;
             transition: color 0.2s ease;
@@ -201,12 +203,17 @@
             color: var(--accent-cyan);
         }
 
+        .nav-cta .btn {
+            padding: 0.6rem 1.5rem;
+            font-size: 0.85rem;
+        }
+
         /* ==========================================================================
-           4. ASYMMETRIC HERO SECTION WITH PRODUCTION STATISTICS
+           4. STAGGERED FLUID HERO CONFIGURATION (METRICS WORKSPACE)
            ========================================================================== */
         .hero-section {
             position: relative;
-            padding-top: 11rem;
+            padding-top: 13rem;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -217,8 +224,8 @@
             margin: 0 auto;
             padding: 2rem;
             display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 6rem;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 5rem;
             align-items: center;
             position: relative;
             z-index: 2;
@@ -230,18 +237,18 @@
             font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--accent-cyan);
-            background: rgba(0, 240, 255, 0.05);
-            border: 1px solid rgba(0, 240, 255, 0.2);
-            padding: 0.35rem 1rem;
-            border-radius: 4px;
+            letter-spacing: 0.12em;
+            color: var(--accent-coral);
+            background: rgba(241, 122, 99, 0.06);
+            border: 1px solid rgba(241, 122, 99, 0.2);
+            padding: 0.4rem 1.2rem;
+            border-radius: 100px;
             margin-bottom: 2rem;
         }
 
         .hero-title {
             font-family: var(--ff-heading);
-            font-size: 5rem;
+            font-size: 5.5rem;
             font-weight: 800;
             line-height: 1.05;
             letter-spacing: -0.05em;
@@ -251,7 +258,7 @@
         .hero-subtitle {
             color: var(--text-muted);
             font-size: 1.25rem;
-            line-height: 1.75;
+            line-height: 1.8;
             margin-bottom: 3.5rem;
             max-width: 650px;
         }
@@ -261,68 +268,92 @@
             gap: 1.5rem;
         }
 
-        /* Side Asymmetrical Panel Metrics inspired by Shiftwave layout */
         .hero-visual {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .telemetry-card {
-            background-color: #0D121F;
-            border: 1px solid var(--border-glow);
-            border-radius: 8px;
-            padding: 2rem;
+            gap: 2rem;
             position: relative;
         }
 
-        .telemetry-card::before {
+        /* Glow Backdrops behind metrics layers */
+        .hero-visual::after {
             content: '';
             position: absolute;
-            left: 0; top: 0; bottom: 0;
-            width: 3px;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px; height: 250px;
             background: var(--accent-purple);
+            filter: blur(120px);
+            opacity: 0.15;
+            z-index: 1;
+            pointer-events: none;
         }
 
-        .telemetry-card.coral::before { background: var(--accent-coral); }
-        .telemetry-card.cyan::before { background: var(--accent-cyan); }
+        .telemetry-panel {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-glow);
+            border-radius: 20px;
+            padding: 2.25rem;
+            z-index: 2;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
         .telemetry-val {
             font-family: var(--ff-heading);
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 800;
             line-height: 1;
-            margin-bottom: 0.25rem;
-            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
         }
 
         .telemetry-lbl {
             color: var(--text-muted);
             font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
             font-weight: 600;
         }
 
-        /* ==========================================================================
-           5. INTERACTIVE SOLUTIONS PLATFORM GRID (CRISP BORDERS)
-           ========================================================================== */
-        .solutions-section {
-            background-color: rgba(10, 14, 23, 0.7);
-            border-top: 1px solid var(--border-glow);
-            border-bottom: 1px solid var(--border-glow);
+        /* Kinetic Fluid Movement Animations */
+        .telemetry-panel:nth-child(1) { animation: fluidFloat1 7s ease-in-out infinite; }
+        .telemetry-panel:nth-child(2) { animation: fluidFloat2 8s ease-in-out infinite; }
+        .telemetry-panel:nth-child(3) { animation: fluidFloat3 9s ease-in-out infinite; }
+
+        .telemetry-panel:hover {
+            border-color: rgba(0, 240, 255, 0.2);
+            transform: scale(1.02) translateY(-4px) !important;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
+        @keyframes fluidFloat1 {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes fluidFloat2 {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+        @keyframes fluidFloat3 {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+
+        /* ==========================================================================
+           5. RADIAL SHADOW PLATFORM GRID (CORE SOLUTIONS)
+           ========================================================================== */
         .solutions-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
+            gap: 3rem;
         }
 
         .solution-card {
-            background-color: #0D121F;
+            background: linear-gradient(180deg, rgba(30,41,59,0.3) 0%, rgba(15,23,42,0.1) 100%);
             border: 1px solid var(--border-glow);
-            border-radius: 8px;
+            border-radius: 24px;
             overflow: hidden; 
             display: flex;
             flex-direction: column;
@@ -332,7 +363,7 @@
         .card-image-wrapper {
             position: relative;
             width: 100%;
-            height: 190px;
+            height: 200px;
             overflow: hidden;
         }
 
@@ -340,7 +371,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.5) contrast(1.1) saturate(0.6); 
+            filter: brightness(0.5) contrast(1.05) saturate(0.7); 
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -350,11 +381,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, transparent 30%, #0D121F);
+            background: linear-gradient(to bottom, transparent 40%, #060913 100%);
         }
 
         .card-content-box {
-            padding: 2.5rem 2rem;
+            padding: 3rem 2.5rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -362,63 +393,51 @@
 
         .card-title {
             font-family: var(--ff-heading);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 1.25rem;
             font-weight: 700;
             letter-spacing: -0.02em;
-            line-height: 1.2;
+            line-height: 1.25;
         }
 
         .card-description {
             color: var(--text-muted);
             font-size: 0.95rem;
-            line-height: 1.7;
+            line-height: 1.75;
         }
 
         .solution-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(241, 122, 99, 0.3);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            transform: translateY(-8px);
+            border-color: rgba(241, 122, 99, 0.25);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
         }
 
         .solution-card:hover .card-bg-image {
-            transform: scale(1.04); 
-            filter: brightness(0.65) contrast(1.15) saturate(0.8); 
+            transform: scale(1.05);
         }
 
         /* ==========================================================================
-           6. VINTAGE-AI MONITOR ARCHITECTURE (SCANLINE DETAIL)
+           6. THE GLOWING MICRO-MATRIX SPOTLIGHT — VINTAGE-AI SUITE
            ========================================================================== */
         .vintage-section {
             position: relative;
-            background-color: #090D16;
-            border-bottom: 1px solid var(--border-glow);
+            background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.03) 0%, transparent 70%);
         }
 
         .vintage-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 3.5rem;
         }
 
         .vintage-box {
-            background: #0D121F;
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--border-glow);
-            border-radius: 8px;
-            padding: 4rem 3.5rem;
+            border-radius: 24px;
+            padding: 4.5rem 4rem;
             position: relative;
-            overflow: hidden;
-        }
-
-        .vintage-box::after {
-            content: " ";
-            display: block;
-            position: absolute;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%);
-            background-size: 100% 4px;
-            z-index: 2;
-            pointer-events: none;
         }
 
         .vintage-badge {
@@ -429,12 +448,12 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
             color: var(--accent-coral);
-            margin-bottom: 1.75rem;
+            margin-bottom: 1.5rem;
         }
 
         .vintage-title {
             font-family: var(--ff-heading);
-            font-size: 2rem;
+            font-size: 2.15rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
             letter-spacing: -0.03em;
@@ -443,17 +462,13 @@
 
         .vintage-text {
             color: var(--text-muted);
-            font-size: 1rem;
-            line-height: 1.75;
+            font-size: 1.05rem;
+            line-height: 1.8;
         }
 
         /* ==========================================================================
-           7. RUNTIME PROGRESS FRAMEWORK TIMELINE TRACK
+           7. THE FRAMEWORK SPRINT PIPELINE INTERFACES
            ========================================================================== */
-        .framework-section {
-            background: rgba(10, 14, 23, 0.4);
-        }
-
         .framework-track {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -468,7 +483,7 @@
             left: 0;
             width: 100%;
             height: 1px;
-            background: var(--border-glow);
+            background: linear-gradient(90deg, transparent, var(--border-glow) 20%, var(--border-glow) 80%, transparent);
             z-index: 1;
         }
 
@@ -478,30 +493,30 @@
         }
 
         .node-bubble {
-            width: 50px;
-            height: 50px;
-            background-color: #0A0E17;
+            width: 54px;
+            height: 54px;
+            background-color: #060913;
             border: 1px solid var(--border-glow);
-            border-radius: 4px;
+            border-radius: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: var(--ff-heading);
             font-weight: 800;
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
+            font-size: 1.15rem;
+            margin-bottom: 2.25rem;
             transition: all 0.3s ease;
         }
 
         .track-node:hover .node-bubble {
             border-color: var(--accent-cyan);
             color: var(--accent-cyan);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
         }
 
         .node-title {
             font-family: var(--ff-heading);
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 1rem;
             letter-spacing: -0.02em;
@@ -510,37 +525,33 @@
         .node-desc {
             color: var(--text-muted);
             font-size: 0.95rem;
-            line-height: 1.65;
+            line-height: 1.7;
         }
 
         /* ==========================================================================
-           8. STRATEGIC GOVERNANCE CORPORATE PROFILE PANELS
+           8. STRATEGIC GOVERNANCE COMPACT INTERFACE PANELS
            ========================================================================== */
-        .authority-section {
-            border-top: 1px solid var(--border-glow);
-        }
-
         .profiles-container {
             display: grid;
             grid-template-columns: 1fr;
         }
 
         .profile-card {
-            background: #0D121F;
+            background: linear-gradient(180deg, rgba(15,23,42,0.3) 0%, transparent 100%);
             border: 1px solid var(--border-glow);
-            padding: 4.5rem;
-            border-radius: 8px;
+            padding: 5rem;
+            border-radius: 32px;
         }
 
         .profile-meta {
             margin-bottom: 2.5rem;
             border-bottom: 1px solid var(--border-glow);
-            padding-bottom: 1.5rem;
+            padding-bottom: 1.75rem;
         }
 
         .founder-name {
             font-family: var(--ff-heading);
-            font-size: 2rem;
+            font-size: 2.25rem;
             font-weight: 800;
             letter-spacing: -0.03em;
         }
@@ -551,60 +562,60 @@
             color: var(--accent-cyan);
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.12em;
             margin-top: 0.5rem;
         }
 
         .founder-bio {
             color: var(--text-muted);
-            font-size: 1.05rem;
-            line-height: 1.8;
+            font-size: 1.1rem;
+            line-height: 1.85;
         }
 
         /* ==========================================================================
-           9. INDUSTRIAL INTAKE FIELD FORM LAYOUT
+           9. HIGH-FIDELITY SECURE LEAD CAPTURE SYSTEM FORMS
            ========================================================================== */
         .contact-section {
-            padding: 4rem 2rem 10rem 2rem;
+            padding: 4rem 2rem 12rem 2rem;
             display: flex;
             justify-content: center;
-            border-top: 1px solid var(--border-glow);
         }
 
         .form-wrapper {
-            background-color: #0D121F;
+            background-color: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--border-glow);
-            border-radius: 8px;
+            border-radius: 32px;
             width: 100%;
-            max-width: 680px;
-            padding: 4.5rem;
+            max-width: 700px;
+            padding: 5rem;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
         }
 
         .form-header {
-            text-align: left;
-            margin-bottom: 3.5rem;
-            border-left: 2px solid var(--accent-coral);
-            padding-left: 1.25rem;
+            text-align: center;
+            margin-bottom: 4rem;
         }
 
         .form-title {
             font-family: var(--ff-heading);
-            font-size: 2.25rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1.15;
+            letter-spacing: -0.04em;
+            line-height: 1.2;
         }
 
         .intake-form {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 2.25rem;
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.85rem;
         }
 
         .form-group label {
@@ -612,16 +623,16 @@
             font-weight: 700;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.12em;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
-            background-color: #0A0E17;
+            background-color: rgba(6, 9, 19, 0.5);
             border: 1px solid var(--border-glow);
-            border-radius: 4px;
-            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            padding: 1.1rem 1.4rem;
             color: var(--text-pure);
             font-family: var(--ff-body);
             font-size: 1rem;
@@ -630,7 +641,7 @@
 
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 130px;
         }
 
         .form-group input:focus,
@@ -638,22 +649,23 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--accent-cyan);
+            background-color: rgba(6, 9, 19, 0.8);
         }
 
         .form-group select option {
-            background-color: #0D121F;
+            background-color: #060913;
             color: var(--text-pure);
         }
 
         /* ==========================================================================
-           10. TECHNICAL BUSINESS FOOTER COMPONENT
+           10. METRIC STYLING FOR TECHNICAL BUSINESS FOOTER
            ========================================================================== */
         .footer {
             border-top: 1px solid var(--border-glow);
-            padding: 3rem 2rem;
-            font-size: 0.9rem;
+            padding: 4rem 2rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
-            background: #070B14;
+            background: #04060d;
         }
 
         .footer-container {
@@ -663,19 +675,20 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .footer-brand-name {
             font-family: var(--ff-heading);
             font-weight: 700;
             color: #F9FAFB;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.35rem;
+            font-size: 1.1rem;
         }
 
         .footer-location-text {
             font-size: 0.85rem;
-            opacity: 0.8;
+            opacity: 0.75;
         }
 
         .footer-meta-links a {
@@ -690,11 +703,11 @@
         }
 
         /* ==========================================================================
-           11. MEDIA BREAKPOINTS FOR BALANCED RESPONSIVENESS
+           11. MEDIA BREAKPOINTS FOR COMPACT MOBILE GRAPHICS
            ========================================================================== */
         @media (max-width: 1024px) {
             html { font-size: 15px; }
-            .hero-title { font-size: 3.8rem; }
+            .hero-title { font-size: 4rem; }
             .solutions-grid { grid-template-columns: repeat(2, 1fr); }
             .vintage-grid { grid-template-columns: 1fr; gap: 3rem; }
             .framework-track { grid-template-columns: repeat(2, 1fr); gap: 4rem; }
@@ -702,16 +715,15 @@
         }
 
         @media (max-width: 768px) {
+            .navbar { width: calc(100% - 2rem); top: 1rem; }
             .nav-links, .nav-cta { display: none; } 
-            .hero-container { grid-template-columns: 1fr; text-align: center; gap: 4rem; }
-            .hero-title { font-size: 3.2rem; }
-            .section-header { text-align: center; border-left: none; border-bottom: 2px solid var(--accent-cyan); padding-left: 0; padding-bottom: 1rem; }
-            .form-header { border-left: none; border-bottom: 2px solid var(--accent-coral); padding-left: 0; padding-bottom: 1rem; text-align: center; }
+            .hero-container { grid-template-columns: 1fr; text-align: center; gap: 5rem; }
+            .hero-title { font-size: 3.4rem; }
             .hero-subtitle { margin-left: auto; margin-right: auto; }
             .hero-actions { justify-content: center; }
-            .hero-visual { height: 320px; order: -1; }
+            .hero-visual { height: auto; order: -1; }
             .solutions-grid { grid-template-columns: 1fr; }
-            .form-wrapper { padding: 3rem 2rem; }
+            .form-wrapper { padding: 4rem 2.5rem; }
         }
     </style>
 </head>
@@ -755,16 +767,16 @@
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="telemetry-card cyan">
-                        <div class="telemetry-val">5 Days</div>
+                    <div class="telemetry-panel">
+                        <div class="telemetry-val accent-cyan-text" id="metric-days">5 Days</div>
                         <div class="telemetry-lbl">Average Sprint Cycle Delivery</div>
                     </div>
-                    <div class="telemetry-card purple">
-                        <div class="telemetry-val">97.3%</div>
+                    <div class="telemetry-panel">
+                        <div class="telemetry-val accent-coral-text" id="metric-precision">97.3%</div>
                         <div class="telemetry-lbl">Prompt-to-Output Architecture Precision</div>
                     </div>
-                    <div class="telemetry-card coral">
-                        <div class="telemetry-val">100%</div>
+                    <div class="telemetry-panel">
+                        <div class="telemetry-val gradient-text" id="metric-deployment">100%</div>
                         <div class="telemetry-lbl">AI-Orchestrated System Deployment</div>
                     </div>
                 </div>
@@ -802,7 +814,7 @@
                     
                     <div class="solution-card">
                         <div class="card-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=600&q=80" alt="Automated LLM Code Synthesis" class="card-bg-image">
+                            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=600&q=80" alt="Automated LLM Code Synthesis" class="card-bg-image">
                             <div class="card-image-overlay"></div>
                         </div>
                         <div class="card-content-box">
@@ -933,17 +945,53 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Navbar Scroll Boundary Controller
+            // Navbar Glassmorphism Scroll Handler
             const navbar = document.querySelector('.navbar');
             if (navbar) {
                 window.addEventListener('scroll', () => {
                     if (window.scrollY > 40) {
-                        navbar.style.background = 'rgba(10, 14, 23, 0.98)';
-                        navbar.style.padding = '0.75rem 2rem';
+                        navbar.style.background = 'rgba(6, 9, 19, 0.94)';
+                        navbar.style.top = '0px';
+                        navbar.style.width = '100%';
+                        navbar.style.borderRadius = '0px';
                     } else {
-                        navbar.style.background = 'rgba(10, 14, 23, 0.85)';
-                        navbar.style.padding = '1.2rem 2rem';
+                        navbar.style.background = 'rgba(6, 9, 19, 0.6)';
+                        navbar.style.top = '1.5rem';
+                        navbar.style.width = 'calc(100% - 4rem)';
+                        navbar.style.borderRadius = '100px';
                     }
+                });
+            }
+
+            // Odometer Running Value Counter Metrics
+            initTelemetryCounters();
+
+            function initTelemetryCounters() {
+                const metrics = [
+                    { elementId: 'metric-days', targetedVal: 5, suffix: ' Days' },
+                    { elementId: 'metric-precision', targetedVal: 97.3, suffix: '%' },
+                    { elementId: 'metric-deployment', targetedVal: 100, suffix: '%' }
+                ];
+
+                metrics.forEach(metric => {
+                    const targetNode = document.getElementById(metric.elementId);
+                    if (!targetNode) return;
+
+                    let activeCount = 0;
+                    const totalDuration = 2000; 
+                    const operationalSteps = 60;
+                    const valueIncrement = metric.targetedVal / operationalSteps;
+                    const temporalInterval = totalDuration / operationalSteps;
+
+                    const countingTimer = setInterval(() => {
+                        activeCount += valueIncrement;
+                        if (activeCount >= metric.targetedVal) {
+                            clearInterval(countingTimer);
+                            targetNode.textContent = metric.targetedVal + metric.suffix;
+                        } else {
+                            targetNode.textContent = (metric.elementId === 'metric-precision' ? activeCount.toFixed(1) : Math.floor(activeCount)) + metric.suffix;
+                        }
+                    }, temporalInterval);
                 });
             }
 
@@ -986,8 +1034,8 @@
                         setTimeout(() => {
                             submitBtn.disabled = false;
                             submitBtn.textContent = 'Initiate Onboarding Protocol';
-                            submitBtn.style.background = 'linear-gradient(135deg, var(--accent-cyan), var(--accent-coral))';
-                            submitBtn.style.color = '#0A0E17';
+                            submitBtn.style.background = 'linear-gradient(90deg, var(--accent-cyan), var(--accent-coral))';
+                            submitBtn.style.color = '#060913';
                         }, 3000);
                     }, 1500);
                 });
